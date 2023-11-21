@@ -1,3 +1,6 @@
 models:
   Chirp:
+    user_id: id foreign
+    title: string 100
     message: longtext
+    published_at: timestamp nullable

@@ -1,7 +1,7 @@
 created:
     - database/factories/ChirpFactory.php
-    - database/migrations/2023_11_21_153340_create_chirps_table.php
+    - database/migrations/2023_11_21_154832_create_chirps_table.php
     - app/Models/Chirp.php
 models:
     User: {  }
-    Chirp: { message: longtext }
+    Chirp: { user_id: 'id foreign', title: 'string 100', message: longtext, published_at: 'timestamp nullable' }

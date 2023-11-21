@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('chirps', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(App\Models\User::class)->constrained();
+            $table->string('title');
             $table->longText('message');
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Chirp extends Model
 {
@@ -15,7 +16,10 @@ class Chirp extends Model
      * @var array
      */
     protected $fillable = [
+        'user_id',
+        'title',
         'message',
+        'published_at',
     ];
 
     /**
@@ -25,5 +29,12 @@ class Chirp extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'user_id' => 'integer',
+        'published_at' => 'timestamp',
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }
