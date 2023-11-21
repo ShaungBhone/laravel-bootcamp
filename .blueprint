@@ -1,0 +1,7 @@
+created:
+    - database/factories/ChirpFactory.php
+    - database/migrations/2023_11_21_145810_create_chirps_table.php
+    - app/Models/Chirp.php
+models:
+    User: {  }
+    Chirp: { message: longtext }
